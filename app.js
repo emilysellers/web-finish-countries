@@ -35,7 +35,7 @@ window.addEventListener('load', async () => {
 
 async function findCountries(name, continent) {
     // > Part A: Call the service function that gets the countries
-    const response = await getCountries();
+    const response = await getCountries(name, continent);
     // > Part C: Add the name and continent arguments to getCountries
 
     // > Part A: Assign to state the :
@@ -58,6 +58,7 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
     // > Part C: Call findCountries with name and continent from formData
+    findCountries(formData.get('name'), formData.get('continent'));
 });
 
 /* Display Functions */
